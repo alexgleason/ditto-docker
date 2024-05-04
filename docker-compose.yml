@@ -40,6 +40,8 @@ services:
     environment:
       - ADMIN_HEX_KEY=${ADMIN_HEX_KEY}
       - SENTRY_DSN=${SENTRY_DSN}
+    volumes:
+       - ditto_data:/app
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.ditto-docker.rule=Host(`${DITTO_DOMAIN}`)"
@@ -48,3 +50,6 @@ services:
       - "traefik.http.routers.ditto-docker.tls.certresolver=selfhostedservices"
       - "traefik.http.middlewares.accesscontrol.headers.customResponseHeaders.access-control-allow-origin=*"
       - "traefik.http.routers.ditto-docker.middlewares=accesscontrol@docker"
+
+volumes:
+  ditto_data:
