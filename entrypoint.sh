@@ -30,6 +30,7 @@ else
     cp favicon.ico static/
     cp favicon.ico public/
     mkdir public/instance/images
+    cp soapbox-logo.svg public/instance/images/
     echo "Renaming public/instance/soapbox.example.json to public/instance/soapbox.json..."
     mv public/instance/soapbox.example.json public/instance/soapbox.json 
     echo
