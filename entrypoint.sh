@@ -26,14 +26,10 @@ else
     echo
     deno task admin:role $ADMIN_HEX_KEY admin
     echo
-    echo "Downloading Ditto favicon..."
-    curl -s -o static/favicon.ico https://slink.fractalized.net/image/fc6d10bc-d363-4328-b161-43487c4899d5.ico
-    cp static/favicon.ico public
-    echo
-    echo "Download Soapbox logo..."
+    echo "Copying Ditto images..."
+    cp favicon.ico static/
+    cp favicon.ico public/
     mkdir public/instance/images
-    curl -s -o public/instance/images/soapbox-logo.svg https://gitlab.com/soapbox-pub/soapbox/-/raw/main/src/assets/images/soapbox-logo.svg
-    echo
     echo "Renaming public/instance/soapbox.example.json to public/instance/soapbox.json..."
     mv public/instance/soapbox.example.json public/instance/soapbox.json 
     echo
