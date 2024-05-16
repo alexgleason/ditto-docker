@@ -14,6 +14,7 @@ RUN DITTO_NSEC=$(deno task nsec) && \
 RUN deno cache src/server.ts
 COPY favicon.ico .
 COPY soapbox-logo.svg .
+ENV PORT 8000
 EXPOSE 8000/tcp
 COPY ./entrypoint.sh /
 RUN chmod +x /entrypoint.sh
